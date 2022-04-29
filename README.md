@@ -1,0 +1,1 @@
+# gedymahardika.com
