@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "React site under contruction page to showcase countdown timer and opt-in form components.",
   "keywords": [],
-  "main": "src/index.js",
+  "main": "docs/index.js",
   "dependencies": {
     "moment": "2.29.1",
     "react": "16.8.6",
