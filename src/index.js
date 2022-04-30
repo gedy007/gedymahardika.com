@@ -1,23 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Preloader from "./components/Preloader/Preloader";
-import Timer from "./components/Countdown/Timer";
-
-import "./styles.css";
+import { Routes, Route, Navigate, BrowserRouter } from 'react-router-dom';
+import Home from './pages/Home';
 
 function App() {
   return (
-    <div className="App">
-      <div className="container">
-        <h1>
-          My Blog
-          <br />
-          Will Coming Soon
-        </h1>
-        <Timer />
-        <Preloader />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path={process.env.PUBLIC_URL + '/en/'} element={<Home />} />
+        <Route
+        path={process.env.PUBLIC_URL + '/*'}
+        element={<Navigate to="/" replace />}
+        />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
