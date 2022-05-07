@@ -1,0 +1,51 @@
+{
+  "name": "gedymahardika.com",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "export": "next build ./src && next export"
+  },
+  "keywords": [],
+  "author": "gedymahardika",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/preset-env": "^7.16.11",
+    "@emailjs/browser": "^3.6.2",
+    "@fortawesome/fontawesome-free": "^6.1.1",
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-brands-svg-icons": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@hcaptcha/react-hcaptcha": "^1.3.0",
+    "autoprefixer": "^9.1.5",
+    "babel-loader": "^8.2.5",
+    "babel-plugin-macros": "^3.1.0",
+    "babel-plugin-module-resolver": "^3.1.1",
+    "babel-plugin-wrap-in-js": "^1.1.1",
+    "dotenv": "^16.0.0",
+    "emit-file-loader": "^0.0.2",
+    "glob": "^7.1.3",
+    "next": "^12.1.5",
+    "node-fetch": "^3.2.4",
+    "node-sass": "^7.0.1",
+    "postcss": "^8.4.12",
+    "postcss-easy-import": "^4.0.0",
+    "postcss-loader": "^6.2.1",
+    "prop-types": "^15.8.1",
+    "raw-loader": "^0.5.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "sass-loader": "^12.6.0",
+    "webpack": "^5.72.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
