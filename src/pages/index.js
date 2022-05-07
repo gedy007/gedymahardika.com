@@ -25,14 +25,14 @@ export default function IndexPage() {
     };
   });
 
-  const handleOpenArticle = article => {
+  const handleOpenArticle = (article) => {
     setIsArticleVisible(!isArticleVisible);
     setArticle(article);
 
     setTimeout(() => {
       setTimeoutModal(!timeoutModal);
     }, 325);
-    
+
     setTimeout(() => {
       setArticleTimeout(!articleTimeout);
     }, 350);

@@ -253,13 +253,13 @@ input[type='radio'] {
   opacity: 1;
 }
 
-@media screen and (min-width: 769px) {
+@media screen and (min-width: 768px) {
   .mobile-layout {
     display: none;
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .desktop-layout {
     display: none;
   }
