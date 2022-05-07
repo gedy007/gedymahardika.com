@@ -63,6 +63,7 @@ export default function ContactForm() {
   //emailjs
   const sendEmail = e => {
     e.preventDefault();
+    captchaRef.current.execute();
       emailjs
         .sendForm(
           process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -83,7 +84,7 @@ export default function ContactForm() {
 
 
   return (
-    <form method="post" action="#" onSubmit={sendEmail} ref={form}>
+    <form method="post" action="/api/verifyHCaptcha" onSubmit={sendEmail} ref={form}>
       <div className="field half first">
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" autoComplete="name" required />
@@ -122,11 +123,10 @@ export default function ContactForm() {
         onExpire={onExpire}
         ref={captchaRef}
         theme="dark"
-        required
       />
       <ul className="actions">
         <li>
-          <input type="submit" value="Send Message" className="special" />
+          <input type="submit" value="Send Message" className="special"/>
         </li>
         <li>
           <input type="reset" value="Reset" />
