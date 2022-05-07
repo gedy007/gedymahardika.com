@@ -14,11 +14,15 @@ export default function ContactForm() {
     setEmail(value);
   };
 
-  // const handleSubmit = (event) => {
-  //   // https://docs.hcaptcha.com/configuration#jsapi
-  //   event.preventDefault();
-  //   captchaRef.current.execute();
-  // };
+  const handleSubmit = (event, captchaCode) => {
+    // https://docs.hcaptcha.com/configuration#jsapi
+    event.preventDefault();
+    if (captchaCode) {
+      return sendEmail()
+    } else {
+      captchaRef.current.execute();
+    }
+  };
 
   const onHCaptchaChange = async (captchaCode) => {
     // If the hCaptcha code is null or undefined indicating that
@@ -29,7 +33,7 @@ export default function ContactForm() {
     try {
       const response = await fetch("/api/verifyHCaptcha", {
         method: "POST",
-        body: JSON.stringify({ email, captcha: captchaCode }),
+        body: JSON.stringify({ captcha: captchaCode }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -37,6 +41,7 @@ export default function ContactForm() {
       if (response.ok) {
         // If the response is ok than show the success alert
         alert("Email sent successfully");
+        sendEmail();
       } else {
         // Else throw an error with the message returned
         // from the API
@@ -48,7 +53,8 @@ export default function ContactForm() {
     } finally {
       // Reset the hCaptcha when the request has failed or succeeeded
       // so that it can be executed again if user submits another email.
-      setEmail("");
+      // setEmail("");
+      hcaptcha.reset();
     }
   };
 
@@ -61,9 +67,7 @@ export default function ContactForm() {
   };
 
   //emailjs
-  const sendEmail = e => {
-    e.preventDefault();
-    captchaRef.current.execute();
+  const sendEmail = () => {
       emailjs
         .sendForm(
           process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -84,7 +88,7 @@ export default function ContactForm() {
 
 
   return (
-    <form method="post" action="/api/verifyHCaptcha" onSubmit={sendEmail} ref={form}>
+    <form method="post" action="/api/verifyHCaptcha" onSubmit={handleSubmit} ref={form}>
       <div className="field half first">
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" autoComplete="name" required />
