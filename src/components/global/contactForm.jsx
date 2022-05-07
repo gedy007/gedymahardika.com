@@ -27,7 +27,7 @@ export default function ContactForm() {
       return;
     }
     try {
-      const response = await fetch("../utils/verifyHCaptcha", {
+      const response = await fetch("../../pages/api/verifyHCaptcha.js", {
         method: "POST",
         body: JSON.stringify({ email, captcha: captchaCode }),
         headers: {
@@ -82,6 +82,7 @@ export default function ContactForm() {
         );
   };
 
+
   return (
     <form method="post" action="#" onSubmit={handleSubmit} ref={form}>
       <div className="field half first">
@@ -94,7 +95,7 @@ export default function ContactForm() {
           type="email"
           name="email"
           id="email"
-          pattern="(/[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$/)"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,15}"
           onChange={handleChange}
         />
       </div>
@@ -102,7 +103,7 @@ export default function ContactForm() {
         <label htmlFor="tel">Phone Number</label>
         <input type="tel" name="tel" id="phone" required />
       </div>
-      <div className="field half desktop-layout" style={{ padding: 30 }}>
+      <div className="field half desktop-layout" style={{ padding: 25 }}>
         <span className="">&nbsp;&nbsp;</span>
       </div>
       <div className="field">
