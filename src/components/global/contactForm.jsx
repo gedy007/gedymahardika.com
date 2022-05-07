@@ -27,7 +27,7 @@ export default function ContactForm() {
       return;
     }
     try {
-      const response = await fetch("../../pages/api/verifyHCaptcha.js", {
+      const response = await fetch("/api/verifyHCaptcha", {
         method: "POST",
         body: JSON.stringify({ email, captcha: captchaCode }),
         headers: {
@@ -36,7 +36,6 @@ export default function ContactForm() {
       });
       if (response.ok) {
         // If the response is ok than show the success alert
-        sendEmail();
         alert("Email sent successfully");
       } else {
         // Else throw an error with the message returned
@@ -127,7 +126,7 @@ export default function ContactForm() {
       />
       <ul className="actions">
         <li>
-          <input type="submit" value="Send Message" className="special" />
+          <input type="submit" value="Send Message" className="special" onChange={sendEmail} />
         </li>
         <li>
           <input type="reset" value="Reset" />
