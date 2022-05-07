@@ -1,8 +1,8 @@
 {
-  "/api/verifyHCaptcha": "pages/api/verifyHCaptcha.js",
-  "/404": "pages/404.html",
-  "/_error": "pages/_error.js",
   "/_app": "pages/_app.js",
+  "/api/verifyHCaptcha": "pages/api/verifyHCaptcha.js",
   "/_document": "pages/_document.js",
-  "/": "pages/index.html"
+  "/_error": "pages/_error.js",
+  "/": "pages/index.html",
+  "/404": "pages/404.html"
 }
