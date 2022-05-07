@@ -14,11 +14,11 @@ export default function ContactForm() {
     setEmail(value);
   };
 
-  const handleSubmit = (event) => {
-    // https://docs.hcaptcha.com/configuration#jsapi
-    event.preventDefault();
-    captchaRef.current.execute();
-  };
+  // const handleSubmit = (event) => {
+  //   // https://docs.hcaptcha.com/configuration#jsapi
+  //   event.preventDefault();
+  //   captchaRef.current.execute();
+  // };
 
   const onHCaptchaChange = async (captchaCode) => {
     // If the hCaptcha code is null or undefined indicating that
@@ -83,7 +83,7 @@ export default function ContactForm() {
 
 
   return (
-    <form method="post" action="#" onSubmit={handleSubmit} ref={form}>
+    <form method="post" action="#" onSubmit={sendEmail} ref={form}>
       <div className="field half first">
         <label htmlFor="name">Name</label>
         <input type="text" name="name" id="name" autoComplete="name" required />
@@ -126,7 +126,7 @@ export default function ContactForm() {
       />
       <ul className="actions">
         <li>
-          <input type="submit" value="Send Message" className="special" onChange={sendEmail} />
+          <input type="submit" value="Send Message" className="special" />
         </li>
         <li>
           <input type="reset" value="Reset" />
