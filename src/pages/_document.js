@@ -5,10 +5,7 @@ export default function Document() {
   return (
     <Html>
       <Head>
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i"
-        />
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i|family=Montserrat:700,900" />
         <link rel="shortcut icon" href="/favicon.png" />
         <script
           type="text/javascript"
