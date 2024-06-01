@@ -25,7 +25,7 @@ export default function IndexPage() {
     };
   });
 
-  const handleOpenArticle = (article) => {
+  const handleOpenArticle = article => {
     setIsArticleVisible(!isArticleVisible);
     setArticle(article);
 
@@ -59,16 +59,32 @@ export default function IndexPage() {
     >
       <div>
         <Head>
-          <title>Gedy Mahardika | Bali Digital Marketing and Developer</title>
+          <title>Gedy Mahardika | Bali Software Engineer</title>
           <meta
-            name='description'
+            name="description"
             content="Welcome to Gedy Mahardika personal website, I'm Bali based digital marketer and tech enthusiast. I built this site with Next JS and SEO optimized for digital marketing purposes."
           />
-          <meta name='url' property='og:url' content='https://gedymahardika.com/' />
-          <meta name='title' property='og:title' content='Gedy Mahardika | Bali based Dev and Digital Marketer' />
-          <meta name='type' property='og:type' content='website' />
-          <meta name='description' property='og:description' content="I'm Bali based tech enthusiast & digital marketer." />
-          <meta name='image' property='og:image' content='https://gedymahardika.com/static/images/pic03.jpg' />
+          <meta
+            name="url"
+            property="og:url"
+            content="https://gedymahardika.com/"
+          />
+          <meta
+            name="title"
+            property="og:title"
+            content="Gedy Mahardika | Bali based Dev and Digital Marketer"
+          />
+          <meta name="type" property="og:type" content="website" />
+          <meta
+            name="description"
+            property="og:description"
+            content="I'm Bali based tech enthusiast & digital marketer."
+          />
+          <meta
+            name="image"
+            property="og:image"
+            content="https://gedymahardika.com/static/images/pic03.jpg"
+          />
         </Head>
 
         <style dangerouslySetInnerHTML={{ __html: stylesheet }} />
