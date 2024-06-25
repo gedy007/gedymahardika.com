@@ -1,20 +1,9 @@
+# Expo Router and Tailwind CSS
 
-# gedymahardika.com
-Personal site built with React & Next JS
+Use [Expo Router](https://docs.expo.dev/router/introduction/) with [Nativewind](https://www.nativewind.dev/v4/overview/) styling.
 
-## Getting Started
-```
-# Install npm packages
-npm install
+## 🚀 How to use
 
-# Start up the next.js dev server
-npm run dev
-```
-
-<br />
-
-## Generating the Static Site
-```
-# Build and export the site static files
-npm run export
+```sh
+npx create-expo-app -e with-router-tailwind
 ```
